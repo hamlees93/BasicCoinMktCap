@@ -1,12 +1,12 @@
 require 'http'
 
-class Cryptocurrency
+module Cryptocurrency
     def portfolio
     end
 
     #only for top 100, by 24hr volume, could easily be updated to top 200
     def top10Gainers
-        gainersLosers.first(10)
+        gainersLosers.first(10).to_h
     end
 
     #only for top 100, by 24hr volume, could easily be updated to top 200

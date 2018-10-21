@@ -2,34 +2,13 @@
 
 <h1>Coins</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Symbol</th>
-      <th>Price</th>
-      <th>Change24hr</th>
-      <th>Volume24hr</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+<!-- Renders the form and passes @gainers through as local variable 'table' -->
+<%= render partial: "table", object: @gainers %>
 
-  <tbody>
-    <% @coins.each do |coin| %>
-      <tr>
-        <td><%= coin.name %></td>
-        <td><%= coin.symbol %></td>
-        <td><%= coin.price %></td>
-        <td><%= coin.change24hr %></td>
-        <td><%= coin.volume24hr %></td>
-        <td><%= link_to 'Show', coin %></td>
-        <td><%= link_to 'Edit', edit_coin_path(coin) %></td>
-        <td><%= link_to 'Destroy', coin, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+<!-- Renders the form and passes @losers through as local variable 'table' -->
+<%= render partial: "table", object: @losers %>
 
-<br>
+
+
 
 <%= link_to 'New Coin', new_coin_path %>

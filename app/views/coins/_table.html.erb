@@ -1,0 +1,23 @@
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Symbol</th>
+      <th>Price</th>
+      <th>Change24hr</th>
+      <th>Volume24hr</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+  <tbody>
+      <% table.each do |k, v| %>
+      <tr>
+        <td><%= v["name"] %></td>
+        <td><%= v["symbol"] %></td>
+        <td><%= v["price"] %></td>
+        <td><%= number_to_percentage((v["quotes"]["USD"]["percent_change_24h"]), precision: 2) %></td>
+        <td><%= number_to_currency(v["quotes"]["USD"]["volume_24h"]) %></td>
+      </tr>
+    <% end %>
+  </tbody> 
+</table>

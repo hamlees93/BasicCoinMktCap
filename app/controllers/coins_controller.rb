@@ -4,7 +4,8 @@ class CoinsController < ApplicationController
   # GET /coins
   # GET /coins.json
   def index
-    @coins = Coin.all
+    @gainers = Coin.new.top10Gainers
+    @losers = Coin.new.top10Losers
   end
 
   # GET /coins/1
@@ -70,5 +71,10 @@ class CoinsController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def coin_params
       params.require(:coin).permit(:name, :symbol, :price, :change24hr, :volume24hr)
+    end
+
+    def coin_gainers
+      coin = Cryptocurrency.new
+      coin.top10Gainers
     end
 end
