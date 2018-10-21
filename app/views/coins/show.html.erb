@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @coin.name %>
+</p>
+
+<p>
+  <strong>Symbol:</strong>
+  <%= @coin.symbol %>
+</p>
+
+<p>
+  <strong>Price:</strong>
+  <%= @coin.price %>
+</p>
+
+<p>
+  <strong>Change24hr:</strong>
+  <%= @coin.change24hr %>
+</p>
+
+<p>
+  <strong>Volume24hr:</strong>
+  <%= @coin.volume24hr %>
+</p>
+
+<%= link_to 'Edit', edit_coin_path(@coin) %> |
+<%= link_to 'Back', coins_path %>
