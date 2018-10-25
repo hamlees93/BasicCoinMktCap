@@ -55,3 +55,5 @@ end
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 gem "http", "~> 4.0"
+
+gem "devise", "~> 4.5"

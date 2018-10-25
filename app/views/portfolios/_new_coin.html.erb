@@ -1,0 +1,15 @@
+<%= form_with model: portfolio, local: true do |form| %>
+  <div class="field">
+    <%= form.label :symbol %>
+    <%= form.text_field :symbol %>
+  </div>
+  <div class="field">
+    <%= form.label :quantity %>
+    <!-- Fix this later, so it can take decimals -->
+    <%= form.number_field :quantity  %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

@@ -1,0 +1,25 @@
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Symbol</th>
+      <th>Price</th>
+      <th>Change24hr</th>
+      <th>Qunatity Held</th>
+      
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+  <tbody>
+      <% table.each do |k, v| %>
+      <tr>
+        <td><%= v["name"] %></td>
+        <td><%= v["symbol"] %></td>
+        <td><%= number_to_currency(v["price"]) %></td>
+        <td><%= number_to_percentage((v["change24h"]), precision: 2) %></td>
+        <td><%= v["quantity"] %></td>
+        
+      </tr>
+    <% end %>
+  </tbody> 
+</table>
